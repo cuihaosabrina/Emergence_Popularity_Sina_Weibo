@@ -143,7 +143,6 @@ def GetRepost(all_url):
         print("Error description: Socket error timed out.")  
 
 #below is a demo
-
 new_below7_12 = ['2020年首只秦岭大熊猫宝宝诞生',
  '上海浦东机场货机火灾已扑灭',
  '朱广权的七夕段子',
@@ -166,7 +165,6 @@ for keyword in new_below7_12:
         print(keyword, len(keyword_url_list))
 
 	##### make new dir to store reposts and change to new dir 
-
         dir = cwd + "/" + type_group_cluster + "/" + keyword  ##!!!!!!!
 
         if not os.path.exists(dir):
@@ -174,7 +172,7 @@ for keyword in new_below7_12:
 
         os.chdir(cwd +  "/" + type_group_cluster + "/" + keyword)
 
-        for i in range(37, len(keyword_url_list)): 
+        for i in range(len(keyword_url_list)): 
             print("This is the {}th mobile repost link".format(i+1)) 
             GetRepost(getUrlList(keyword_url_list[i])) 
             print("The {}th mobile repost link is done.".format(i+1))
